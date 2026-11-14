@@ -4,7 +4,7 @@
   <img alt="TOTEM logo font" src="/docs/images/TOTEM_logo_bright.svg">
 </picture>
 
-# ZMK CONFIG FOR THE TOTEM SPLIT KEYBOARD
+# ZMK CONFIG FOR THE TOTEM SPLIT KEYBOARD - COPIED FROM [abrvsk](https://github.com/abrvsk)
 
 [Here](https://github.com/GEIGEIGEIST/totem) you can find the hardware files and build guide.\
 [Here](https://github.com/GEIGEIGEIST/qmk-config-totem) you can find the QMK config for the TOTEM.
@@ -15,6 +15,16 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 ![TOTEM layout](/docs/images/TOTEM_layout.svg)
 
 
+## CURRENT VERSION
+
+Files in this repo will build 4 firmware files:
+- settings_reset
+- dongle
+- left
+- right
+Before flashing make sure to use `settings_reset` on every board, otherwise they won't be able to pair on the first use.
+Without dongle BT status would show the battery level of the left half only, which was draining in about 3 weeks as it constantly listens for the right half.
+With the dongle connected, BT status (presumably) shows the average of battery levels for both halves, which should not drain in 2-3 months. Fingers crossed!
 
 ## HOW TO USE
 
@@ -26,5 +36,5 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - scroll down and unzip the `firmware.zip` archive that contains the latest firmware
 - connect the left half of the TOTEM to your PC, press reset twice
 - the keyboard should now appear as a mass storage device
-- drag'n'drop the `totem_left-xiao_ble//zmk-zmk.uf2` file from the archive onto the storage device
-- repeat this process with the right half and the `totem_right-xiao_ble//zmk-zmk.uf2` file.
+- drag'n'drop the `totem_left-seeeduino_xiao_ble-zmk.uf2` file from the archive onto the storage device
+- repeat this process with the right half and the `totem_right-seeeduino_xiao_ble-zmk.uf2` file.

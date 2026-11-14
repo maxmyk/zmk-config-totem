@@ -1,6 +1,17 @@
 include:
   - board: xiao_ble//zmk
+    shield: settings_reset
+
+  # ENABLE DONGLE SUPPORT
+  # - board: seeeduino_xiao_ble
+  #   shield: totem_dongle
+
+  - board: xiao_ble//zmk
     shield: totem_left
+    # ENABLE DONGLE SUPPORT
+    # cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
   - board: xiao_ble//zmk
     shield: totem_right
-# there is no settingsreset (needed) for the XIAO
+    # ENABLE DONGLE SUPPORT
+    # cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
